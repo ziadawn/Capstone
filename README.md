@@ -1,16 +1,37 @@
-Your proposal must be in a markdown .md file more info
 
-Your proposal must set specific and attainable goals
-
-Your proposal must cover all major topics we've covered
-
-Your proposal must include the sections below
-
-**(working) NAME  -- molecule**
+**NAME  -- molecule**
 
 ===========================================
 
+**SCHEDULE**
 
+Done:
+
+    Set up repository
+    Set up Django project
+    Set up Dgano app, link basic pages 
+
+
+To do:
+
+    Done! _Week 1: 
+        Set up repository
+        Start new Django project
+        Start app, get basics set up_
+       
+    Week 2:
+        Get basic HTML laid out
+        Set up test accounts
+        
+        
+    Break:
+        Play with CSS
+    
+    Week 3:
+        Polish, troubleshoot, etc
+        
+
+===========================================
 
 **PROJECT OVERVIEW**
 
@@ -25,6 +46,9 @@ What problem is it attempting to solve?
     Simple, streamlined private chat platform to handle groups and individuals
 
 What libraries or frameworks will you use?
+
+    Considering using Twilio API chat and/or SMS?  
+
 
 ===========================================
 
@@ -60,29 +84,3 @@ How will their actions correspond to events on the back-end?
     Users
     Group tags
     Messages (read, unread)
-
-===========================================
-
-**SCHEDULE**
-
-To do:
-
-    Week 1: 
-        Set up repository
-        Start new Django project
-        Start app, get basics set up
-       
-    Week 2:
-        Get basic HTML laid out
-        Set up test accounts
-        
-    Break:
-        Play with CSS
-    
-    Week 3:
-        Polish, troubleshoot, etc
-
-
-Here you'll want to come up with some (very rough) estimates of the timeframe for each section.
-State specifically which steps you'll take in the implementation.
-This section should also include work you're planning to do after the capstone is finished.
