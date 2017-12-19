@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <title>{% block title %} Molecule {% endblock %}</title>
+</head>
+
+<style>
+    h1 {
+        font-variant: small-caps;
+        /*background: antiquewhite;*/
+    }
+</style>
+
+<!--{% load static %}-->
+
+<!--<link rel="stylesheet" type="text/css" href="{% static 'molecule/style.css' %}" />-->
+
+<body>
+    <div id="header">
+        {% block sidebar %}
+        <h1>Molecule</h1>
+        {% endblock %}
+    </div>
+
+    <div id="log_out_button">
+        <button>Log Out</button>
+    </div>
+
+    <div id="navigation">
+        <h4><a href="{% url 'molecule:home' %}">Home</a></h4>
+        <h4><a href="{% url 'molecule:messages' %}">Messages</a></h4>
+        <h4><a href="{% url 'molecule:groups' %}">Groups</a></h4>
+        <h4><a href="{% url 'molecule:profile' %}">Profile</a></h4>
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

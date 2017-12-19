@@ -1,0 +1,19 @@
+<!--extend needs to be at the top-->
+{% extends 'molecule/base.html' %}
+
+
+{% block content %}
+
+    <h2>Create Account</h2>
+
+    <a href="{% url 'molecule:profile' %}">Profile</a>
+    <!--<a href="{% url 'molecule:index' %}">Logout</a>-->
+
+
+    <form action="{% url 'molecule:home' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="title">
+        <textarea name="body"></textarea>
+        <button type="submit">make post</button>
+    </form>
+{% endblock %}
