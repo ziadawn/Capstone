@@ -10,6 +10,8 @@ Done:
     Set up repository
     Set up Django project
     Set up Dgano app, link basic pages 
+    Create superuser
+    Start login tutorial, create basic login page
 
 
 To do:
