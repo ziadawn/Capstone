@@ -11,7 +11,7 @@ Done:
     Set up Django project
     Set up Dgano app, link basic pages 
     Create superuser
-    Start login tutorial, create basic login page
+    Get basic login set up, clean up pages
 
 
 To do:

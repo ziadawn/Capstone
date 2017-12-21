@@ -1,21 +1,35 @@
+<style>
+    head {
+        font-variant: small-caps;
+    }
+</style>
 
-<!--extend needs to be at the top-->
-{% extends 'molecule/base.html' %}
 
-{% load static %}
+<head>
+    <title>Molecule - Login</title>
+</head>
+
+<body>
+
+<!--{% block title %}Login{% endblock%}-->
 
 {% block content %}
+    <h2>Molecule</h2>
 
-    <a href="{% url 'blog:index' %}">Back to Index</a>
+    {% if error_message %}
+    <span style="color:red;font-size:20px">{{error_message}}</span>
+    {% endif %}
 
-
-    <form action="{% url 'blog:write_post' %}" method="post">
+    <form action="{% url 'molecule:index'%}" method="post">
         {% csrf_token %}
-        <input type="text" name="title">
-        <textarea name="body"></textarea>
-        <button type="submit">make post</button>
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit">Login</button>
     </form>
 
+    <p>New User?</p>
+    <a href="{% url 'molecule:create_account' %}">Create Account</a>
 
 {% endblock %}
 
+</body>

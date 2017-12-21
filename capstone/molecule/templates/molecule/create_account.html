@@ -1,19 +1,15 @@
-<!--extend needs to be at the top-->
-{% extends 'molecule/base.html' %}
-
-
-{% block content %}
 
     <h2>Create Account</h2>
 
-    <a href="{% url 'molecule:profile' %}">Profile</a>
-    <!--<a href="{% url 'molecule:index' %}">Logout</a>-->
+    <p>Create account here!</p>
 
+    <form action="{% url 'molecule:create_account' %}" method="POST">
 
-    <form action="{% url 'molecule:home' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="title">
-        <textarea name="body"></textarea>
-        <button type="submit">make post</button>
+
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="email" name="email" placeholder="email">
+        <button type="submit">Create Account</button>
+
     </form>
-{% endblock %}

@@ -1,0 +1,36 @@
+<!--My log in page-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<link rel="stylesheet" href="style.css" />-->
+    <title>{% block title %} Molecule {% endblock %}</title>
+</head>
+
+<style>
+    h1 {
+        font-variant: small-caps;
+        /*background: antiquewhite;*/
+    }
+</style>
+
+<body>
+    <div id="header">
+        {% block sidebar %}
+        <h1>Molecule</h1>
+        {% endblock %}
+    </div>
+
+    <a href="{% url 'molecule:index' %}">Log In</a>
+    <a href="{% url 'molecule:create_account' %}">Create Account</a>
+
+
+
+</body>
+
+
+
+
+<!--{% endblock %}-->
+

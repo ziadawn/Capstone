@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +8,15 @@
 </head>
 
 <style>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'molecule/style.css' %}"/>
+
+
     h1 {
         font-variant: small-caps;
-        /*background: antiquewhite;*/
     }
 </style>
 
-<!--{% load static %}-->
-
-<!--<link rel="stylesheet" type="text/css" href="{% static 'molecule/style.css' %}" />-->
 
 <body>
     <div id="header">
@@ -23,12 +25,11 @@
         {% endblock %}
     </div>
 
-    <div id="log_out_button">
-        <button>Log Out</button>
+    <div id="log_out">
+        <a href="{% url 'molecule:logout' %}">logout</a>
     </div>
 
     <div id="navigation">
-        <h4><a href="{% url 'molecule:home' %}">Home</a></h4>
         <h4><a href="{% url 'molecule:messages' %}">Messages</a></h4>
         <h4><a href="{% url 'molecule:groups' %}">Groups</a></h4>
         <h4><a href="{% url 'molecule:profile' %}">Profile</a></h4>
