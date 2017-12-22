@@ -1,0 +1,29 @@
+
+{% extends 'molecule/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+<div id="header">
+    {% block sidebar %}
+    <h1>Molecule</h1>
+    {% endblock %}
+</div>
+<div id="log_out">
+    <a href="{% url 'molecule:logout' %}">logout</a>
+</div>
+
+<div id="navigation">
+    <h4><a href="{% url 'molecule:messages' %}">messages</a></h4>
+    <h4><a href="{% url 'molecule:groups' %}">groups</a></h4>
+    <h4><a href="{% url 'molecule:profile' %}">profile</a></h4>
+</div>
+
+<div id="content">
+    {% block content_page %}
+    {% endblock %}
+</div>
+
+{% endblock %}

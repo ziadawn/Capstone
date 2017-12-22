@@ -1,42 +1,13 @@
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <!--<link rel="stylesheet" href="style.css" />-->
-    <title>{% block title %} Molecule {% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
-<style>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'molecule/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'molecule/style.css' %}"/>
 
+{% block content %}
+{% endblock %}
 
-    h1 {
-        font-variant: small-caps;
-    }
-</style>
-
-
-<body>
-    <div id="header">
-        {% block sidebar %}
-        <h1>Molecule</h1>
-        {% endblock %}
-    </div>
-
-    <div id="log_out">
-        <a href="{% url 'molecule:logout' %}">logout</a>
-    </div>
-
-    <div id="navigation">
-        <h4><a href="{% url 'molecule:messages' %}">Messages</a></h4>
-        <h4><a href="{% url 'molecule:groups' %}">Groups</a></h4>
-        <h4><a href="{% url 'molecule:profile' %}">Profile</a></h4>
-    </div>
-
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
-</body>
-</html>

@@ -1,10 +1,9 @@
 <!--extend needs to be at the top-->
-{% extends 'molecule/base.html' %}
+{% extends 'molecule/loggedin_base.html' %}
 
+{% block content_page %}
 
-{% block content %}
-
-    <h2>Messages</h2>
+    <h2>{{user.username}}'s Messages</h2>
 
         <!--From model:-->
         <!--messages-->

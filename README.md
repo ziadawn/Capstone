@@ -12,6 +12,7 @@ Done:
     Set up Dgano app, link basic pages 
     Create superuser
     Get basic login set up, clean up pages
+    Get login and logout working and linked 
 
 
 To do:

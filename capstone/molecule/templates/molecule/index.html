@@ -1,15 +1,9 @@
-<style>
-    head {
-        font-variant: small-caps;
-    }
-</style>
+{% extends 'molecule/base.html' %}
 
 
 <head>
     <title>Molecule - Login</title>
 </head>
-
-<body>
 
 <!--{% block title %}Login{% endblock%}-->
 
@@ -31,5 +25,3 @@
     <a href="{% url 'molecule:create_account' %}">Create Account</a>
 
 {% endblock %}
-
-</body>
