@@ -7,22 +7,30 @@
 
     <div>
         {% for group in groups %}
-        <p>title</p>
+        <p>{{group.name}}</p>
         <ul>
-            {% for contact in group.contacts %}
+            {% for contact in group.contacts.all %}
                 <li>
-                   {{ user }}
+                   {{ contact.username }} - {{contact.first_name}} {{contact.last_name}}
                 </li>
+            {% endfor %}
         </ul>
 
         {% endfor %}
 
     </div>
 
+<form action="">
+
+
+
+
+    <input type="submit" />
+</form>
+
 <!--from model:-->
 <!--group tags-->
 
-{% endfor %}
 {% endblock %}
 
 

@@ -16,7 +16,7 @@ def index(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('molecule:profile'))
+            return HttpResponseRedirect(reverse('molecule:redirect_profile'))
         else:
             print('login unsuccessful')
             return render(request, 'molecule/index.html', {'error_message': 'username/password not found'})
@@ -78,6 +78,13 @@ def edit_profile(request):
 
 @login_required
 def groups(request):                # the name of this link is "contacts"
+    if request.method == 'POST':
+        new_group = Group()
+        new_group.save()
+        # create new group
+        pass
+
+
     groups = Group.objects.filter(user=request.user)
     return render(request, 'molecule/groups.html', {'groups': groups})
     # return HttpResponse('manage groups')

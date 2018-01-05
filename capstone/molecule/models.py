@@ -13,9 +13,13 @@ class Group(models.Model):
 
 # need one-to-one here to connect to users
 class UserProfile(models.Model):
-    image = models.ImageField(null=True)
+    image = models.ImageField(null=True, blank=True)
     bio = models.TextField(null=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+
+    # this function makes the admin panel display the user name rather than a genearic name
+    def __str__(self):
+        return self.user.username
 
 
 class Message(models.Model):
