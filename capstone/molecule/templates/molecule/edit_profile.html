@@ -6,14 +6,30 @@
 
     <h2>Edit Profile</h2>
 
-    <a href="{% url 'molecule:profile' %}">Profile</a>
-    <!--<a href="{% url 'molecule:index' %}">Logout</a>-->
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+
+            First name<input type="text" name="first_name" value="{{user.first_name}}"/><br />
+            Last name<input type="text" name="last_name" value="{{user.last_name}}"/><br />
+            Email<input type="text" name="email" value="{{user.email}}"/><br />
+            Bio<textarea name="bio">{{profile.bio}}</textarea><br />
+
+            <button type="submit">save changes</button><br />
+            {{messages.profile}}
+        </form>
+    </div>
+
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            Enter new password <input type="password" name="password"/><br/>
+            Reenter password <input type="password" name="verify_password"/><br/>
+            <button type="submit">update password</button><br />
+            {{messages.password}}
+        </form>
+    </div>
 
 
-    <form action="{% url 'molecule:home' %}" method="post">
-        {% csrf_token %}
-        <input type="text" name="title">
-        <textarea name="body"></textarea>
-        <button type="submit">make post</button>
-    </form>
+
 {% endblock %}

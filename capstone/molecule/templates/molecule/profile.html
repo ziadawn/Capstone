@@ -5,15 +5,24 @@
 
 <!-- now the page greets them by name!-->
 
-    <h2>{{user.username}}'s Profile</h2>
+    <h2>{{viewed_user.username}}'s Profile</h2>
 
+        {{profile.bio}}
 
-<!--Pulling from model:-->
-<!--name-->
-<!--password-->
-<!--email-->
-<!--phone-->
-<!--groups-->
+    <div>
+        {% if profile.image %}
+        <img src="url({{profile.image.url}})" />
+        {% else %}
+        <img src="" />
+        {% endif %}
+    </div>
 
+    <div>
+        {% if viewed_user == user %}
+        <a href="{% url 'molecule:edit_profile' %}">edit profile</a>
+        {% else %}
+        <a href="{% url 'molecule:add_contact' viewed_user.username%}">add as contact</a>
+        {% endif %}
+    </div>
 
 {% endblock %}

@@ -2,19 +2,19 @@
 
 h1 {
     font-variant: small-caps;
+    font-size: xx-large;
     color: darkblue;
 }
 
 body {
     height: 100%;
-    background:white url('images/molecule-3000.jpg') no-repeat right bottom;
+    background:white url('images/molecule-3000.jpg') no-repeat right top;
 }
 
 #head {
     display: flex;
     justify-content: center;
 }
-
 
 
 #log_out {

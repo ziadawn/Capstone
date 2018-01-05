@@ -3,9 +3,26 @@
 
 {% block content_page %}
 
-    <h2>{{user.username}}'s Groups</h2>
+    <h2>{{user.username}}'s Contacts & Groups</h2>
+
+    <div>
+        {% for group in groups %}
+        <p>title</p>
+        <ul>
+            {% for contact in group.contacts %}
+                <li>
+                   {{ user }}
+                </li>
+        </ul>
+
+        {% endfor %}
+
+    </div>
 
 <!--from model:-->
 <!--group tags-->
 
+{% endfor %}
 {% endblock %}
+
+
