@@ -7,6 +7,7 @@
 
     <div>
         {% for group in groups %}
+
         <p>{{group.name}}</p>
         <ul>
             {% for contact in group.contacts.all %}
@@ -20,17 +21,19 @@
 
     </div>
 
-<form action="">
+<form action="" method="post">
+    {% csrf_token %}
 
+    New group name: <input type="text" name="group_name"/> <br/>
 
+    <button type="submit">create group</button><br/>
 
-
-    <input type="submit" />
 </form>
 
 <!--from model:-->
 <!--group tags-->
 
 {% endblock %}
+
 
 

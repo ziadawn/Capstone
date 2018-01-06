@@ -32,6 +32,8 @@ def create_account(request):
         login(request, user)
         profile = UserProfile(user=user)                # red user is from the models and white user is in this scope
         profile.save()
+        group = Group(name='default', user=user)                                 # name variable and referencing a Class
+        group.save()
         return HttpResponseRedirect(reverse('molecule:profile'))
     return render(request, 'molecule/create_account.html')
     # return HttpResponse('create account')
@@ -79,11 +81,8 @@ def edit_profile(request):
 @login_required
 def groups(request):                # the name of this link is "contacts"
     if request.method == 'POST':
-        new_group = Group()
+        new_group = Group(name=request.POST['group_name'], user=request.user)   # create new group
         new_group.save()
-        # create new group
-        pass
-
 
     groups = Group.objects.filter(user=request.user)
     return render(request, 'molecule/groups.html', {'groups': groups})
