@@ -1,9 +1,14 @@
 
 
 h1 {
+    display: flex;
     font-variant: small-caps;
     font-size: xx-large;
     color: darkblue;
+    background-color: cornflowerblue;
+    padding: 10px;
+    border: 0px;
+    width: 100%;
 }
 
 body {
@@ -18,10 +23,13 @@ body {
 
 
 #log_out {
+    display: flex;
     position:absolute;
     left:100%;
     transform:translateX(-110%);
     top:10px;
+    z-index: +1;
+
 }
 
 /*this is the nav bar*/

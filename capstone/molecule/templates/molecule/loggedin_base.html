@@ -10,16 +10,20 @@
     {% block sidebar %}
     <h1>Molecule</h1>
     {% endblock %}
+
+    <div id="navigation">
+        <h4><a href="{% url 'molecule:messages' %}">messages</a></h4>
+        <h4><a href="{% url 'molecule:groups' %}">contacts</a></h4>
+        <h4><a href="{% url 'molecule:redirect_profile' %}">profile</a></h4>
+    </div>
+
 </div>
+
 <div id="log_out">
     <a href="{% url 'molecule:logout' %}">logout</a>
 </div>
 
-<div id="navigation">
-    <h4><a href="{% url 'molecule:messages' %}">messages</a></h4>
-    <h4><a href="{% url 'molecule:groups' %}">contacts</a></h4>
-    <h4><a href="{% url 'molecule:redirect_profile' %}">profile</a></h4>
-</div>
+
 
 <div id="content">
     {% block content_page %}

@@ -1,0 +1,59 @@
+body {
+	height:100vh;
+    margin: 0;
+    /*background:white url('images/molecule-3000.jpg') no-repeat right top;*/
+    background: linear-gradient(rgba(121, 85, 72, 0.45), rgba(121, 85, 72, 0.45)), url('images/molecule image 2.jpg') no-repeat right top;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+    /*background-size: cover;*/
+}
+
+
+#header {
+    display: flex;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: dimgrey;
+    opacity: 0.5;
+}
+
+
+h1 {
+    display: flex;
+    font-variant: small-caps;
+    font-size: xx-large;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+/*#head {*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+/*}*/
+
+
+#log_out {
+    display: flex;
+    position:absolute;
+    left:100%;
+    transform:translateX(-110%);
+    top:10px;
+    z-index: +1;
+
+}
+
+/*this is the nav bar*/
+#navigation {
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+
+h4 {
+    padding: 5px;
+}
+
