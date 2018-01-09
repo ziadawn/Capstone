@@ -8,8 +8,33 @@
         <!--From model:-->
         <!--messages-->
 
-        <div>Send New Message</div>
+        <div id="new_message">
+            <a href="{% url 'molecule:send_message' %}">Send New Message</a>
+        </div>
 
-        <div>Search Messages</div>
+        <!--<div>Search Messages</div>-->
+
+        <div id="unread">
+            <ul> Unread Messages:
+                {% for message in recieved_messages %}
+                <li>
+                    {{message.sender}}, {{message.text}}
+                    <form action="{% url 'molecule:send_message' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="init" value="{{message.sender.id}}">
+                        <input type="submit" value="reply">
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!--<div id="messages">-->
+            <!--<ul> Messages:-->
+                <!--<li>-->
+                    <!--&lt;!&ndash;username and group names of messages&ndash;&gt;-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
 
 {% endblock %}

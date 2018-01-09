@@ -18,17 +18,38 @@ body {
     width: 100%;
     background-color: dimgrey;
     opacity: 0.5;
+    z-index: +1;
+    /*position: fixed;*/
 }
 
 
-h1 {
+#title {
     display: flex;
     font-variant: small-caps;
-    font-size: xx-large;
+    font-size: x-large;
     padding: 10px;
     font-weight: bold;
+    opacity: 1;
 }
 
+
+/*this is the nav bar*/
+#navigation {
+    display: flex;
+    flex-direction: row;
+    color: black;
+	/*font-size:20px;*/
+	background-color:#fff;
+	padding:5px;
+	/*color:#333;*/
+	border-radius: 5px;
+	/*transition: 1s;*/
+}
+
+/*.navbar-btn .btn:hover {*/
+	/*border-radius: 0;*/
+/*!* 	transition:2s; *!*/
+/*}*/
 
 /*#head {*/
     /*display: flex;*/
@@ -42,18 +63,22 @@ h1 {
     left:100%;
     transform:translateX(-110%);
     top:10px;
-    z-index: +1;
-
+    /*z-index: +1;*/
+    background-color: rgb(127, 140, 141);
+    padding: 8px;
+    /*margin: 2px;*/
+    border-radius: 45%;
 }
 
-/*this is the nav bar*/
-#navigation {
-    display: flex;
-    flex-direction: row;
-    color: black;
-}
 
 h4 {
     padding: 5px;
+    color: black;
 }
 
+#content {
+    padding: 10px;
+    background-color: #808093;
+    /*margin-bottom: 100%;*/
+
+}

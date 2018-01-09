@@ -1,0 +1,31 @@
+<!--extend needs to be at the top-->
+{% extends 'molecule/loggedin_base.html' %}
+
+{% block content_page %}
+
+
+    <h2>Compose Message</h2>
+
+
+    <div id="compose">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            {% if not init %}
+                <select name="recipient">
+                    {% for contact in contacts.all %}
+                        <option value={{contact.id}}>{{contact.first_name}}</option><br />
+                    {% endfor %}
+                </select>
+            {% else %}
+                {{init.first_name}}
+                <input type="hidden" name="recipient" value="{{init.id}}">
+            {% endif %}
+
+            Write message <input type="text" name="message"/><br/>
+            <button type="submit">send message</button><br />
+
+        </form>
+    </div>
+
+{% endblock %}

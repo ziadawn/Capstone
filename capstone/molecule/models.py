@@ -24,5 +24,6 @@ class UserProfile(models.Model):
 
 class Message(models.Model):
     text = models.CharField(max_length=500)
-    sender = models.ForeignKey(UserProfile)
-    group = models.ForeignKey(Group)
+    sender = models.ForeignKey(User)
+    recipient = models.ForeignKey(User, null=True, related_name='+')
+    group = models.ForeignKey(Group, null=True)

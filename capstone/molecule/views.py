@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import UserProfile, Group
+from .models import UserProfile, Group, Message
 
 # Create your views here.
 
@@ -101,8 +101,24 @@ def add_contact(request, username):
 
 @login_required
 def messages(request):
-    return render(request, 'molecule/messages.html')
+    recieved_messages = Message.objects.filter(recipient=request.user)
+    return render(request, 'molecule/messages.html', {'recieved_messages':recieved_messages})
     # return HttpResponse('chat')
+
+
+@login_required
+def send_message(request):
+    context = {}
+    if request.method == 'POST':
+        if 'init' in request.POST:
+            context['init'] = get_object_or_404(User, id=request.POST['init'])
+        else:
+            recipient = get_object_or_404(User, id=request.POST['recipient'])
+            message = Message(sender=request.user, text=request.POST['message'], recipient=recipient)
+            message.save()
+            return HttpResponseRedirect(reverse('molecule:messages'))
+    context['contacts'] = get_object_or_404(Group, name='default', user=request.user).contacts
+    return render(request, 'molecule/send_message.html', context)
 
 
 def logout_view(request):

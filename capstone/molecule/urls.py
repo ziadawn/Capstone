@@ -16,6 +16,7 @@ urlpatterns = [
     url(r'^create_account/', views.create_account, name='create_account'),
     url(r'^groups/', views.groups, name='groups'),
     url(r'^messages/', views.messages, name='messages'),
+    url(r'^send_message/', views.send_message, name='send_message'),
     url(r'^logout/$', views.logout_view, name='logout'),
     url(r'^admin/', admin.site.urls),
 ]
