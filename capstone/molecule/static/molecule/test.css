@@ -43,10 +43,41 @@ body {
     height: 50px;
 }
 
+
+#log_out {
+    top:10px;
+    /*z-index: +1;*/
+    background-color: #fff;
+    border: 10px;
+	padding:5px;
+	border-radius: 20px;
+    height: 20px;
+}
+
+
+h4 {
+    padding: 5px;
+    color: black;
+}
+
+#content {
+    padding: 10px;
+    background-color: #808093;
+    /*margin-bottom: 100%;*/
+    border-radius: 20px;
+
+}
+
+.hide_children div {
+    display: none;
+}
+
+
 /*.navbar-btn {*/
   /*margin: 10px;*/
 /*}*/
 
+/*these make sircles around each nav button*/
 /*#nav1 {*/
     /*display: flex;*/
     /*width: 100px;*/
@@ -82,31 +113,3 @@ body {
 
 
 
-
-
-#log_out {
-    top:10px;
-    /*z-index: +1;*/
-    background-color: #fff;
-    border: 10px;
-	padding:5px;
-	border-radius: 20px;
-    height: 20px;
-}
-
-
-h4 {
-    padding: 5px;
-    color: black;
-}
-
-#content {
-    padding: 10px;
-    background-color: #808093;
-    /*margin-bottom: 100%;*/
-
-}
-
-.hide_children div {
-    display: none;
-}

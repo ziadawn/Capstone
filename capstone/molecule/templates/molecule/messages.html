@@ -25,10 +25,19 @@
                             {{text.text}} <br />
                         {% endfor %}
                     </div>
+                    <div>
+                        <form action="{% url 'molecule:send_message' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">reply</button>
+                            <input name="init" type="hidden" value="{{sender.id}}">
+                        </form>
+                    </div>
                 </div>
                 {% endfor %}
             </ul>
         </div>
+
+
 
 <script>
     let open = function(e) {
