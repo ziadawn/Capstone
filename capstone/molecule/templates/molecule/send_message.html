@@ -12,7 +12,7 @@
             {% csrf_token %}
 
             {% if not init %}
-                <select name="recipient">
+                Choose recipient: <select name="recipient">
                     {% for contact in contacts.all %}
                         <option value={{contact.id}}>{{contact.first_name}}</option><br />
                     {% endfor %}
@@ -22,7 +22,7 @@
                 <input type="hidden" name="recipient" value="{{init.id}}">
             {% endif %}
 
-            Write message <input type="text" name="message"/><br/>
+            </br>Write message <input type="text" name="message"/><br/>
             <button type="submit">send message</button><br />
 
         </form>
