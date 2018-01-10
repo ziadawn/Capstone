@@ -15,19 +15,45 @@
         <!--<div>Search Messages</div>-->
 
         <div id="unread">
-            <ul> Unread Messages:
-                {% for message in recieved_messages %}
-                <li>
-                    {{message.sender}}, {{message.text}}
-                    <form action="{% url 'molecule:send_message' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="init" value="{{message.sender.id}}">
-                        <input type="submit" value="reply">
-                    </form>
-                </li>
+            <ul> Messages:
+                {% for sender, texts in messages.items %}
+                <div class="hide_children sender">
+                    {{sender.first_name}}
+                    <div class="close_button">Close</div>
+                    <div id="{{sender.username}}">
+                        {% for text in texts %}
+                            {{text.text}} <br />
+                        {% endfor %}
+                    </div>
+                </div>
                 {% endfor %}
             </ul>
         </div>
+
+<script>
+    let open = function(e) {
+        let messages = document.getElementsByClassName('sender');
+        for (let i =0; i < messages.length; i++) {
+            messages[i].classList.add('hide_children');
+        }
+        this.classList.remove('hide_children');
+    };
+
+    let contacts = document.getElementsByClassName('sender');
+    for (let i = 0; i < contacts.length; i++) {
+        contacts[i].onclick = open
+    }
+
+    let close_buttons = document.getElementsByClassName('close_button');
+    for (let i = 0; i < close_buttons.length; i++) {
+        close_buttons[i].onclick = function (e) {
+            e.stopPropagation();
+            this.parentElement.classList.add('hide_children');
+        }
+    }
+
+</script>
+
 
         <!--<div id="messages">-->
             <!--<ul> Messages:-->

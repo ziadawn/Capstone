@@ -34,7 +34,7 @@ def create_account(request):
         profile.save()
         group = Group(name='default', user=user)                                 # name variable and referencing a Class
         group.save()
-        return HttpResponseRedirect(reverse('molecule:profile'))
+        return HttpResponseRedirect(reverse('molecule:redirect_profile'))
     return render(request, 'molecule/create_account.html')
     # return HttpResponse('create account')
 
@@ -102,7 +102,14 @@ def add_contact(request, username):
 @login_required
 def messages(request):
     recieved_messages = Message.objects.filter(recipient=request.user)
-    return render(request, 'molecule/messages.html', {'recieved_messages':recieved_messages})
+    messages = {}
+    for message in recieved_messages:
+        if message.sender not in messages:
+            messages[message.sender] = [message]
+        else:
+            messages[message.sender].append(message)
+
+    return render(request, 'molecule/messages.html', {'messages': messages})
     # return HttpResponse('chat')
 
 

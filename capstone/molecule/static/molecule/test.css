@@ -23,6 +23,14 @@ body {
 }
 
 
+.hide_children div {
+    display: none;
+}
+
+.sender:hover {
+    /*make something happen when you hover over message sender*/
+}
+
 #title {
     display: flex;
     font-variant: small-caps;
@@ -42,7 +50,7 @@ body {
 	background-color:#fff;
 	padding:5px;
 	/*color:#333;*/
-	border-radius: 5px;
+	border-radius: 25px;
 	/*transition: 1s;*/
 }
 
