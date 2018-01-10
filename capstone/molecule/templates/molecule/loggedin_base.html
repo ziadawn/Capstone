@@ -11,19 +11,22 @@
     <div id="title">
         <h1>Molecule</h1>
     </div>
-    {% endblock %}
 
     <div id="navigation">
-        <div class="navbar-btn"><h4><a href="{% url 'molecule:messages' %}">messages</a></h4></div>
-        <div class="navbar-btn"><h4><a href="{% url 'molecule:groups' %}">contacts</a></h4></div>
-        <div class="navbar-btn"><h4><a href="{% url 'molecule:redirect_profile' %}">profile</a></h4></div>
+        <div class="navbar-btn" id="nav1"><h4><a href="{% url 'molecule:messages' %}">messages</a></h4></div>
+        <div class="navbar-btn" id="nav2"><h4><a href="{% url 'molecule:groups' %}">contacts</a></h4></div>
+        <div class="navbar-btn" id="nav3"><h4><a href="{% url 'molecule:redirect_profile' %}">profile</a></h4></div>
     </div>
 
+    <div id="log_out">
+        <a href="{% url 'molecule:logout' %}">logout</a>
+    </div>
+
+
+    {% endblock %}
 </div>
 
-<div id="log_out">
-    <a href="{% url 'molecule:logout' %}">logout</a>
-</div>
+
 
 
 
